@@ -1,0 +1,270 @@
+/* ----------------------------------------
+base styles
+---------------------------------------- */
+* {
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+.clearfix {
+	content: "";
+  	overflow: auto;
+}
+
+body, header {
+	font-family: 'PT Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+article {
+	width: 60%;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+/* ----------------------------------------
+text treatment / headings
+---------------------------------------- */
+
+h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 3em;
+	color: #3ba06f;
+}
+
+h2 {
+	font-size: 1.8em;
+	margin: 0 0 10px;
+	padding: 50px 0 0;
+
+}
+
+h3 {
+	font-size: 1.5em;
+	margin: -5px 0;
+	letter-spacing: 1px;
+}
+
+h1, h2, h3 {
+	text-align: center;
+	font-family: 'Pacifico', cursive;
+}
+
+h4 {
+	font-size: 1.2em;
+	padding: 5px 0 0;
+}
+
+p {
+	font-size: 1em;
+}
+
+.dark {
+	color: white;
+}
+
+.light {
+	color: #3ba06f;
+}
+
+.light h2 {
+	color: #3ba06f;
+}
+
+/* ----------------------------------------
+header
+ ---------------------------------------- */
+
+header {
+	background-color: #ede66d;
+	margin: 0;
+	text-align: center;
+}
+
+#header-nav {
+	padding: 10px;
+}
+
+.navbar-brand h1 {
+	font-size: 2em;
+	margin: 9px 0;
+}
+
+.container-fluid img {
+	width: 80px;
+	height: auto;
+}
+
+.nav-container {
+	background-color: #f7f7f4;
+	padding: 20px;
+	position: relative;
+	margin: 0;
+	color: #374056;
+	text-transform: uppercase;
+}
+
+.main-nav {
+	width: 60%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	letter-spacing: 1.5px;
+}
+
+.brand {
+	padding: 50px 0;
+}
+
+#logo-img {
+	background: url('../images/logo-01.png') no-repeat center;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+/* ----------------------------------------
+recipes section styling
+---------------------------------------- */
+.dark {
+	background-color: #3ba06f;
+}
+
+#recipe, #make {
+	position: relative;
+	text-align: center;
+}
+
+#recipe {
+	height: 300px;
+	width: 100%;
+	background-color: red;
+	position: relative;
+	top: 1000px;
+}
+
+.carousel {
+	width: 70%;
+	margin: 0 auto;
+	z-index: 100;
+}
+
+.smoothie-profile {
+	margin: 40px 10px 50px;
+}
+
+.smoothie-profile img {
+	margin: 0 auto;
+}
+
+/* ----------------------------------------
+info section styling
+---------------------------------------- */
+.info {
+	color: #374056;
+
+}
+
+.info h2 {
+	color: #3ba06f;
+	margin: 0 0 30px;
+}
+
+li {
+	padding: 5px 0;
+	margin: 0 10px;
+}
+
+.tips-list {
+	margin: 50px auto 10px;
+	width: 80%;
+}
+
+.tips-list h3 {
+	margin: 0 0 20px 0;
+}
+
+.tips-list h4 {
+	color: #3ba06f;
+}
+
+.tips-list ul {
+	display: flex;
+}
+
+#resources {
+	text-align: center;
+	color: white;
+}
+
+
+/* -----------------------------------------
+
+Drop down menu styling
+
+-------------------------------------------*/
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display: block;
+	z-index: 999;
+	position: absolute;
+}
+
+
+
