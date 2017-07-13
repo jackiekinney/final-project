@@ -240,7 +240,7 @@ Drop down menu styling
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -256,14 +256,16 @@ Drop down menu styling
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-	background-color: #f1f1f1
+	background-color: #f1f1f1;
+	position: relative;
+	z-index: 1000;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
 	display: block;
-	z-index: 999;
-	position: absolute;
+	position: relative;
+	z-index: 1000;
 }
 
 
