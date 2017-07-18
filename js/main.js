@@ -60,7 +60,44 @@ $('p input').on('click',function() {
   $('#recipeList').append($('<li>').append(ingredient));
 });
 
-// Function for when user clicks an ingredient
+// Getting values of ingredient when user clicks
+
+  $('p input').on('click', function() {
+    var category = $(this).attr('class');
+    var calories = $(this).attr('value');
+    console.log('You chose from ' + category + ' menu. It is ' + calories + ' calories.');
+  });
+
+/* trying to get sum of input values - this code so far doesn't work
+$('p input').change(function() {
+  var sum = 0;
+  $('p input:selected').each(function() {
+    sum += Number($(this).val());
+  });
+  console.log(sum);
+});
+*/ 
+
+  var sum = 0;
+$('p input').click(function() {
+  var value = $(this).val();
+  value = parseInt(value);
+  sum += value;
+  console.log(sum);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
