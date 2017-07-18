@@ -5,8 +5,8 @@ $(document).ready(function(){
       arrows: true,
       infinite: false,
       speed: 300,
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       responsive: [
         {
           breakpoint: 1024,
@@ -41,30 +41,21 @@ $(document).ready(function(){
 /* DROP DOWN MENUS --- When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 
-/*
-function myFunction() {
-    document.getElementById("leafyGreens").classList.toggle("show");
-}
-*/
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-$('#fruit').on('click', function() {
-  $('#fruitDpdn').toggleClass('show');
+$(document).ready(function(){
+   $(document).on('click','.dropbtn',function(){
+        $('.dropbtn').not(this).next().removeClass('show');
+        $(this).next().toggleClass('show');
+    });
+    $(document).on('click',function(e){
+        if(!$(e.target).closest('.dropdown-content'))
+            $('.dropdown-content').removeClass('show');
+    });    
 });
 
-$('#fats').on('click', function() {
-  $('#fatsDpdn').toggleClass('show');
-});
+
+
+
+
+
+
+

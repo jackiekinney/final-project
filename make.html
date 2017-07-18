@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
@@ -16,16 +17,16 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a href="index.html"><div class="pull-left"><img src="images/logo-01.png"></div></a>
-				<div class="navbar-brand"><a href="index.html"><h1>Kalefornia Smoothie</h1></a></div>
+					<div class="navbar-brand"><a href="index.html"><h1>Kalefornia Smoothie</h1></a></div>
 				</div>
 			</div>
 		</div>
 		<nav class="nav-container">
 			<div class="main-nav">
-				<span>Home</span>
-				<span>Recipes</span>
-				<span>Make</span>
-				<span>Info</span>
+				<span><a href="index.html">Home</a></span>
+				<span><a href="index.html#tips">Recipes</a></span>
+				<span><a href="make.html">Make</a></span>
+				<span><a href="index.html#resources">Info</a></span>
 			</div>
 		</nav>
 	</header>
@@ -35,115 +36,118 @@
 		<div class="carousel">
 			<div class="responsive">
 
-			  <div class="smoothie-profile dropdown clearfix">
-			  	<button onclick="myFunction()" class="dropbtn"><img src="images/filler2-01.png">Leafy Greens</button>
-				<div id="leafyGreens" class="dropdown-content">
-					<a href="#">Kale</a>
-					<a href="#">Spinach</a>
-					<a href="#">Swiss Chard</a>
-					<a href="#">Watercress</a>
-					<a href="#">Bok Choy</a>
-					<a href="#">Arugula</a>
-					<a href="#">Collard Greens</a>
-					<a href="#">Mustard Greens</a>
+				<div class="smoothie-profile dropdown clearfix">
+					<input type="image"  src="images/filler2-01.png" class="dropbtn" id="leafyGreens">
+					<div id="greensDpdn" class="dropdown-content">
+						<p><input type="checkbox" name="greens" id="kale" value=""><label for="kale">Kale</label></p>
+						<p><input type="checkbox" name="greens" id="spinach" value=""><label for="spinach">Spinach</label></p>
+						<p><input type="checkbox" name="greens" id="chard" value=""><label for="chard">Swiss Chard</label></p>
+						<p><input type="checkbox" name="greens" id="watercress" value=""><label for="watercress">Watercress</label></p>
+						<p><input type="checkbox" name="greens" id="bok-choy" value=""><label for="bok-choy">Bok Choy</label></p>
+						<p><input type="checkbox" name="greens" id="arugula" value=""><label for="arugula">Arugula</label></p>
+						<p><input type="checkbox" name="greens" id="collard-greens" value=""><label for="collard-greens">Collard Greens</label></p>
+						<p><input type="checkbox" name="greens" id="mustard-greens" value=""><label for="mustard-greens">Mustard Greens</label></p>
+					</div>
 				</div>
-			</div>
 
-			  <div class="smoothie-profile dropdown clearfix">
-				  <input type="image" src="images/filler1-01.png" class="dropbtn" id="fruit"/>
-				  	<div id="fruitDpdn" class="dropdown-content">
-				  		<a href="#">Banana</a>
-						<a href="#">Blueberry</a>
-						<a href="#">Mango</a>
-						<a href="#">Rasberry</a>
-						<a href="#">Peach</a>
-						<a href="#">Apple</a>
-						<a href="#">Pineapple</a>
-						<a href="#">Pomegranate</a>
-						<a href="#">Melon</a>
-						<a href="#">Orange</a>
-						<a href="#">Grapefruit</a>
-						<a href="#">Lime</a>
-						<a href="#">Lemon</a>			
-				  	</div>
-			  </div>
-			  
-			  <div class="smoothie-profile dropdown">
-				  <input type="image" src="images/filler3-01.png" name="Protein &amp; Fats" class="dropbtn" id="fats" />
-				  	<div id="fatsDpdn" class="dropdown-content">
-				  		<a href="#">Flax Seeds</a>
-						<a href="#">Chia Seeds</a>
-						<a href="#">Sesame Seeds</a>
-						<a href="#">Peanut Butter</a>
-						<a href="#">Almond Butter</a>
-						<a href="#">Coconut Oil</a>
-						<a href="#">Cod Liver Oil</a>
-				  	</div>
-			  </div>
-			  
-			  <div class="smoothie-profile dropdown">
-				  <button onclick="myFunction()" class="dropbtn"><img src="images/filler4-01.png">Veggies</button>
-				  	<div id="veggies" class="dropdown-content">
-				  		<a href="#">Cucumber</a>
-						<a href="#">Tomato</a>
-						<a href="#">Avocado</a>
-						<a href="#">Celery</a>
-						<a href="#">Beets</a>
-						<a href="#">Carrot</a>
-						<a href="#">Pepper</a>
-						<a href="#">Garlic</a>
-				  	</div>
-			  </div>
-			  
-			  <div class="smoothie-profile dropdown">
-				  <button onclick="myFunction()" class="dropbtn"><img src="images/filler1-01.png">Boosters</button>
-				  	<div id="boosters" class="dropdown-content">
-				  		<a href="#">Cayenne Pepper</a>
-						<a href="#">Wheatgrass Juice</a>
-						<a href="#">Raw Cacao</a>
-						<a href="#">Açai Juice Shot</a>
-						<a href="#">Chlorella Powder</a>
-						<a href="#">Apple Cider Vinegar</a>
-						<a href="#">Goji</a>
-						<a href="#">Noni</a>
-						<a href="#">Protein Powder</a>
-				  	</div>
-			  </div>
-			  
-			  <div class="smoothie-profile dropdown">
-				  <button onclick="myFunction()" class="dropbtn"><img src="images/filler1-01.png">Liquid</button>
-				  	<div id="liquid" class="dropdown-content">
-						<a href="#">Water</a>
-						<a href="#">Coconut Water</a>
-						<a href="#">Pineapple Juice</a>
-						<a href="#">Orange Juice</a>
-						<a href="#">Pomegranate Juice</a>
-						<a href="#">Apple Juice</a>
-						<a href="#">Almond Milk</a>
-						<a href="#">Soy Milk</a>
-						<a href="#">Rice Milk</a>
-						<a href="#">Hemp Milk</a>
-				  	</div>
-			  </div>
+				<div class="smoothie-profile dropdown clearfix" id="fruitMen">
+					<input type="image" src="images/filler3-01.png" class="dropbtn" id="fruit">
+					<div id="fruitDpdn" class="dropdown-content">
+						<p><input type="checkbox" name="fruit" id="banana" value=""><label for="banana">Banana</label></p>
+						<p><input type="checkbox" name="fruit" id="blueberry" value=""><label for="blueberry">Blueberry</label></p>
+						<p><input type="checkbox" name="fruit" id="mango" value=""><label for="mango">Mango</label></p>
+						<p><input type="checkbox" name="fruit" id="raspberry" value=""><label for="raspberry">Raspberry</label></p>
+						<p><input type="checkbox" name="fruit" id="peach" value=""><label for="peach">Peach</label></p>
+						<p><input type="checkbox" name="fruit" id="apple" value=""><label for="apple">Apple</label></p>
+						<p><input type="checkbox" name="fruit" id="pineapple" value=""><label for="pineapple">Pineapple</label></p>
+						<p><input type="checkbox" name="fruit" id="pomegranate" value=""><label for="pomegranate">Pomegranate</label></p>
+						<p><input type="checkbox" name="fruit" id="orange" value=""><label for="orange">Orange</label></p>
+						<p><input type="checkbox" name="fruit" id="grapefruit" value=""><label for="grapefruit">Grapefruit</label></p>
+						<p><input type="checkbox" name="fruit" id="lime" value=""><label for="lime">Lime</label></p>
+						<p><input type="checkbox" name="fruit" id="lemon" value=""><label for="lemon">Lemon</label></p>
+					</div>
+				</div>
+
+				<div class="smoothie-profile dropdown">
+					<input type="image" src="images/filler4-01.png" class="dropbtn" id="fats">
+					<div id="fatsDpdn" class="dropdown-content">
+						<p><input type="checkbox" name="fats" id="flax-seed" value=""><label for="">Flax Seeds</label></p>
+						<p><input type="checkbox" name="fats" id="chia-seed" value=""><label for="">Chia Seeds</label></p>
+						<p><input type="checkbox" name="fats" id="sesame-seed" value=""><label for="">Sesame Seeds</label></p>
+						<p><input type="checkbox" name="fats" id="peanutbtr" value=""><label for="">Peanut Butter</label></p>
+						<p><input type="checkbox" name="fats" id="almondbtr" value=""><label for="">Almond Butter</label></p>
+						<p><input type="checkbox" name="fats" id="coconut-oil" value=""><label for="">Coconut Oil</label></p>
+						<p><input type="checkbox" name="fats" id="codliver-oil" value=""><label for="">Cod Liver Oil</label></p>
+					</div>
+				</div>
+
+				<div class="smoothie-profile dropdown">
+					<input type="image" src="images/filler1-01.png" class="dropbtn" id="veggies">
+					<div id="veggieDpdn" class="dropdown-content">
+						<p><input type="checkbox" name="veggies" id="cucumber" value=""><label for="">Cucumber</label></p>
+						<p><input type="checkbox" name="veggies" id="tomato" value=""><label for="">Tomato</label></p>
+						<p><input type="checkbox" name="veggies" id="avocado" value=""><label for="">Avocado</label></p>
+						<p><input type="checkbox" name="veggies" id="celery" value=""><label for="">Celery</label></p>
+						<p><input type="checkbox" name="veggies" id="beets" value=""><label for="">Beets</label></p>
+						<p><input type="checkbox" name="veggies" id="carrot" value=""><label for="">Carrot</label></p>
+						<p><input type="checkbox" name="veggies" id="pepper" value=""><label for="">Pepper</label></p>
+						<p><input type="checkbox" name="veggies" id="garpc" value=""><label for="">Garpc</label></p>
+					</div>
+				</div>
+
+				<div class="smoothie-profile dropdown">
+					<input type="image" src="images/filler2-01.png" class="dropbtn" id="boosters">
+					<div id="boostersDpdn" class="dropdown-content">
+						<p><input type="checkbox" name="boosters" id="cayenne" value=""><label for="">Cayenne Pepper</label></p>
+						<p><input type="checkbox" name="boosters" id="wheatgrass" value=""><label for="">Wheatgrass Juice</label></p>
+						<p><input type="checkbox" name="boosters" id="cacao" value=""><label for="">Raw Cacao</label></p>
+						<p><input type="checkbox" name="boosters" id="acai" value=""><label for="">Açai Juice Shot</label></p>
+						<p><input type="checkbox" name="boosters" id="chlorella" value=""><label for="">Chlorella Powder</label></p>
+						<p><input type="checkbox" name="boosters" id="applecider" value=""><label for="">Apple Cider Vinegar</label></p>
+						<p><input type="checkbox" name="boosters" id="goji" value=""><label for="">Goji</label></p>
+						<p><input type="checkbox" name="boosters" id="noni" value=""><label for="">Noni</label></p>
+						<p><input type="checkbox" name="boosters" id="protein-powder" value=""><label for="">Protein Powder</label></p>
+					</div>
+				</div>
+
+				<div class="smoothie-profile dropdown">
+					<input type="image" src="images/filler3-01.png" class="dropbtn" id="liquid">
+					<div id="liquidDpdn" class="dropdown-content">
+						<p><input type="checkbox" name="liquids" id="water" value=""><label for="">Water</label></p>
+						<p><input type="checkbox" name="liquids" id="coconut-water" value=""><label for="">Coconut Water</label></p>
+						<p><input type="checkbox" name="liquids" id="pineapple-juice" value=""><label for="">Pineapple Juice</label></p>
+						<p><input type="checkbox" name="liquids" id="orange-juice" value=""><label for="">Orange Juice</label></p>
+						<p><input type="checkbox" name="liquids" id="pomegranate-juice" value=""><label for="">Pomegranate Juice</label></p>
+						<p><input type="checkbox" name="liquids" id="apple-juice" value=""><label for="">Apple Juice</label></p>
+						<p><input type="checkbox" name="liquids" id="almond-milk" value=""><label for="">Almond Milk</label></p>
+						<p><input type="checkbox" name="liquids" id="soy-milk" value=""><label for="">Soy Milk</label></p>
+						<p><input type="checkbox" name="liquids" id="rice-milk" value=""><label for="">Rice Milk</label></p>
+						<p><input type="checkbox" name="liquids" id="hemp-milk" value=""><label for="">Hemp Milk</label></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	
-	<section id="recipe" class="light">
+	<section id="yourRecipe" class="light">
 		<article class="recipe-list">
 			<h2>Your Recipe</h2>
+			<ul>
+				<li></li>
+			</ul>
+		</article>	
 	</section>
-	
-	<section id="blend" class="dark"></section>
-	
-	<footer></footer>
 
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script>
-	<script type="text/javascript" src='js/main.js'></script>
+		<section id="blend" class="dark"></section>
 
-</body>
-</html>
+		<footer></footer>
+
+		<script
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript" src='js/main.js'></script>
+
+	</body>
+	</html>
