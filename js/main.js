@@ -54,14 +54,13 @@ $(document).ready(function(){
 
 // When user clicks on an ingredient, the name of ingredient shows in 'Your Recipes' list
 
-
 $('p input').on('click',function() {
   var ingredient = $(this).attr('id');
   console.log('You chose ' + ingredient);
   $('#recipeList').append($('<li>').append(ingredient));
 });
 
-
+// Function for when user clicks an ingredient
 
 
 
