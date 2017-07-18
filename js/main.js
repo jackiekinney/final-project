@@ -52,32 +52,16 @@ $(document).ready(function(){
     });    
 });
 
-// When user clicks on an ingredient, the name of ingredient shows in 'Your Recipes' list
-
-$('p input').on('click',function() {
-  var ingredient = $(this).attr('id');
-  console.log('You chose ' + ingredient);
-  $('#recipeList').append($('<li>').append(ingredient));
-});
-
-// Getting values of ingredient when user clicks
-
+// Getting values of ingredient when user clicks - WORKING CODE
+/*
   $('p input').on('click', function() {
     var category = $(this).attr('class');
     var calories = $(this).attr('value');
     console.log('You chose from ' + category + ' menu. It is ' + calories + ' calories.');
   });
+*/
 
-/* trying to get sum of input values - this code so far doesn't work
-$('p input').change(function() {
-  var sum = 0;
-  $('p input:selected').each(function() {
-    sum += Number($(this).val());
-  });
-  console.log(sum);
-});
-*/ 
-
+Add up calories - working code
   var sum = 0;
 $('p input').click(function() {
   var value = $(this).val();
@@ -86,8 +70,28 @@ $('p input').click(function() {
   console.log(sum);
 });
 
+// Display only selected checkboxes
+
+$(document).ready(function() {
+$('p input').on('click',function() {
+  getCheckedBoxes();
+});
 
 
+function getCheckedBoxes() {
+  var result = $('input[type="checkbox"]:checked');
+  if (result.length > 0) {
+      var resultString = "Your smoothie contains " + result.length + " ingredients</br>";
+      result.each(function() {
+        resultString += $(this).attr('id') + "<br/>";
+    });
+      $('#recipeList').html(resultString);
+  }
+  else {
+    $('#recipeList').html("Add more ingredients");
+  }
+};
+});
 
 
 
