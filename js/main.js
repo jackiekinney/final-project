@@ -61,7 +61,7 @@ $(document).ready(function(){
   });
 */
 
-Add up calories - working code
+// Add up calories - working code
   var sum = 0;
 $('p input').click(function() {
   var value = $(this).val();
