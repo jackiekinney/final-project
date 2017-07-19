@@ -114,45 +114,49 @@ function updateCalories() {
   };;
   
 // Update "taste" and "health" values of checked ingredients
-// function updateValues() {
-$('p input').click(function() {
-    var grossFactor = $(this).attr('class');
-    console.log(grossFactor);
-});
-/*   
 
- // var taste = 0;
- // var health = 0;
+
+// core of function - works
+$('p input').click(function() {
+    var taste = 0;
+    var health = 0;
+    var foodGroup = $(this).attr('class');
+    console.log(foodGroup);
+    if (foodGroup === 'greens') {
+      taste -= 1;
+      health += 1;
+    } else if (foodGroup === 'fruit') {
+      taste += 2;
+      } else if (foodGroup === 'fats') {
+      taste += 1;
+      health += 1;
+      } else if (foodGroup === 'boosters') {
+      taste -= 2;
+      health += 2;
+      } else if (foodGroup === 'veggies') {
+      health += 1;
+      }
+      var string = "Your smoothie taste factor is " + taste + " and your smoothie nutrient factor is " + health;
+      console.log(string);
+});
+
+/*
+function updateValues() {
+    var taste = 0;
+    var health = 0;
+    var tasteResult = $('input[type="checkbox"]:checked');
+    if (calResult.length > 0) {
+      var grossFactor = $(this).attr('class');
+  }
+};
+
+*/   
+
  // var recipeResult = $('input[type="checkbox"]:checked');
  // if (recipeResult > 0) {
  // recipeResult.each(function() {
 
-    if (grossFactor === 'greens') {
-      taste -= 1;
-      health += 1;
-    }
-    else if {
-      (grossFactor === 'fruit') {
-      taste += 2;
-      }
-    else if {
-      (grossFactor === 'fats') {
-      taste += 1;
-      health += 1;
-      }
-    else if {
-      (grossFactor === 'boosters') {
-      taste -= 2;
-      health += 2;
-      }
-    else if {
-      (grossFactor === 'veggies') {
-      health += 1;
-      }
-    }
-    }
-    }
-    } */
+
 
 
 
