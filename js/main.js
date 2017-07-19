@@ -77,9 +77,10 @@ $('p input').click(function() {
 
 
 $(document).ready(function() {
-$('p input').on('click',function() {
-  getCheckedBoxes();
-  updateCalories();
+  $('p input').on('click',function() {
+    getCheckedBoxes();
+    updateCalories();
+    getValues();
 });
 
 // Display only selected checkboxes in 'Your Recipe' section
@@ -113,33 +114,36 @@ function updateCalories() {
   }
   };;
   
-// Update "taste" and "health" values of checked ingredients
-// core of function - works
-    var taste = 0;
-    var health = 0;
-$('p input').click(function() {
-    var foodGroup = $(this).attr('class');
-    console.log(foodGroup);
-    if (foodGroup === 'greens') {
-      taste -= 1;
-      health += 1;
-    } else if (foodGroup === 'fruit') {
-      taste += 2;
-    } else if (foodGroup === 'fats') {
-      taste += 1;
-      health += 1;
-    } else if (foodGroup === 'boosters') {
-      taste -= 2;
-      health += 2;
-    } else if (foodGroup === 'veggies') {
-      health += 1;
-    }
-      var string = "Your smoothie taste factor is " + taste + " and your smoothie nutrient factor is " + health;
+// Update "taste" and "health" values of checked ingredients - core of function - works
+function getValues() {
+  var taste = 0;
+  var health = 0;
+  var smoothieResult = $('input[type="checkbox"]:checked');
+  if (smoothieResult.length > 0) {
+    smoothieResult.each(function() {
+      var foodGroup = $(this).attr('class');
+      if (foodGroup === 'greens') {
+        taste -= 1;
+        health += 1;
+      } else if (foodGroup === 'fruit') {
+        taste += 2;
+      } else if (foodGroup === 'fats') {
+        taste += 1;
+        health += 1;
+      } else if (foodGroup === 'boosters') {
+        taste -= 2;
+        health += 2;
+      } else if ( foodGroup === 'veggies') {
+        health += 1;
+      }
+    })
+      var string = "Your smoothie taste factor is " + taste + " and your nutrient factor is " + health;
       console.log(string);
-});
+  }
+}
 
-// when user clicks 'Blend' create message
-/*
+/* when user clicks 'Blend' create message
+
 function determineTaste() {
   if (grossFactor < 0) {
     // computer choose word from array
@@ -156,28 +160,4 @@ function determineHealth() {
   }  
 }
 
-function message(grossFactor, healthFactor) {
-  // display message
 */
-/*
-function updateValues() {
-    var taste = 0;
-    var health = 0;
-    var tasteResult = $('input[type="checkbox"]:checked');
-    if (calResult.length > 0) {
-      var grossFactor = $(this).attr('class');
-  }
-};
-
-*/   
-
- // var recipeResult = $('input[type="checkbox"]:checked');
- // if (recipeResult > 0) {
- // recipeResult.each(function() {
-
-
-
-
-
-
-
