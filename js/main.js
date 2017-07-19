@@ -75,7 +75,6 @@ $('p input').click(function() {
 */
 
 
-// Display only selected checkboxes
 
 $(document).ready(function() {
 $('p input').on('click',function() {
@@ -83,6 +82,7 @@ $('p input').on('click',function() {
   updateCalories();
 });
 
+// Display only selected checkboxes in 'Your Recipe' section
 
 function getCheckedBoxes() {
   var result = $('input[type="checkbox"]:checked');
@@ -91,14 +91,13 @@ function getCheckedBoxes() {
       result.each(function() {
         var selectedValue = $(this).attr('id');
         resultString += $('label[for="cb-'+ selectedValue+'"]').text() + "</br>";
-        //$(this).attr('id') + "<br/>";
     });
       $('#recipeList').html(resultString);
   }
 };
 });
 
-// Add up calories - working code
+// Display sum of calories of checked ingredients
   
 function updateCalories() {
   var sum = 0;
@@ -114,8 +113,7 @@ function updateCalories() {
   }
   };;
   
-
-
+// Update "taste" and "health" values of checked ingredients
 
 
 
