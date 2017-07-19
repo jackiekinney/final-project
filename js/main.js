@@ -114,7 +114,45 @@ function updateCalories() {
   };;
   
 // Update "taste" and "health" values of checked ingredients
+// function updateValues() {
+$('p input').click(function() {
+    var grossFactor = $(this).attr('class');
+    console.log(grossFactor);
+});
+/*   
 
+ // var taste = 0;
+ // var health = 0;
+ // var recipeResult = $('input[type="checkbox"]:checked');
+ // if (recipeResult > 0) {
+ // recipeResult.each(function() {
+
+    if (grossFactor === 'greens') {
+      taste -= 1;
+      health += 1;
+    }
+    else if {
+      (grossFactor === 'fruit') {
+      taste += 2;
+      }
+    else if {
+      (grossFactor === 'fats') {
+      taste += 1;
+      health += 1;
+      }
+    else if {
+      (grossFactor === 'boosters') {
+      taste -= 2;
+      health += 2;
+      }
+    else if {
+      (grossFactor === 'veggies') {
+      health += 1;
+      }
+    }
+    }
+    }
+    } */
 
 
 
