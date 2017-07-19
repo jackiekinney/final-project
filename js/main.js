@@ -36,12 +36,12 @@ $(document).ready(function(){
         // instead of a settings object
       ]
   });
-});
+
 
 /* DROP DOWN MENUS --- When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 
-$(document).ready(function(){
+
    $(document).on('click','.dropbtn',function(){
         $('.dropbtn').not(this).next().removeClass('show');
         $(this).next().toggleClass('show');
@@ -50,7 +50,7 @@ $(document).ready(function(){
         if(!$(e.target).closest('.dropdown-content'))
             $('.dropdown-content').removeClass('show');
     });    
-});
+
 
 // When user clicks on an ingredient, the name of ingredient shows in 'Your Recipes' list
 
@@ -85,20 +85,4 @@ $('p input').click(function() {
   sum += value;
   console.log(sum);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
