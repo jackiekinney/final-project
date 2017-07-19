@@ -5,12 +5,12 @@ base styles
 	box-sizing: border-box;
 	font-size: 16px;
 }
-
+/*
 .clearfix {
 	content: "";
   	overflow: auto;
 }
-
+*/
 body, header {
 	font-family: 'PT Sans', sans-serif;
 }
