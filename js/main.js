@@ -52,18 +52,14 @@ $(document).ready(function(){
     });    
 });
 
-// Getting values of ingredient when user clicks - WORKING CODE
+// Get values of ingredient when user clicks - WORKING CODE
 /*
   $('p input').on('click', function() {
     var category = $(this).attr('class');
     var calories = $(this).attr('value');
     console.log('You chose from ' + category + ' menu. It is ' + calories + ' calories.');
   });
-*/
-
-
-
-/*
+  
 // Add up calories - working code
   var sum = 0;
 $('p input').click(function() {
@@ -94,7 +90,7 @@ function getCheckedBoxes() {
         resultString += $('label[for="cb-'+ selectedValue+'"]').text() + "</br>";
     });
       $('#recipeList').html(resultString);
-  }
+  } else $('#recipeList').html("Choose some ingredients!");
 };
 });
 
@@ -111,7 +107,7 @@ function updateCalories() {
     });
     console.log(sum);
     $('#numberCalories').html("Calories:</br>" + sum);
-  }
+  } else $('#numberCalories').html("");
   };;
   
 // Update "taste" and "health" values of checked ingredients - core of function - works
@@ -139,7 +135,8 @@ function getValues() {
     })
       var string = "Your smoothie taste factor is " + taste + " and your nutrient factor is " + health;
       console.log(string);
-  }
+  } else
+  console.log("You need more ingredients");
 }
 
 /* when user clicks 'Blend' create message
