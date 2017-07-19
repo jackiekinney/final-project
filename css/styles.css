@@ -210,7 +210,7 @@ li {
 Make Your Own Recipe List styling
 ---------------------------------------- */
 
-#recipeList li {
+#recipeList {
 	display: block;
 }
 

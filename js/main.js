@@ -80,6 +80,7 @@ $('p input').click(function() {
 $(document).ready(function() {
 $('p input').on('click',function() {
   getCheckedBoxes();
+  updateCalories();
 });
 
 
@@ -94,23 +95,24 @@ function getCheckedBoxes() {
     });
       $('#recipeList').html(resultString);
   }
-  else {
-    $('#recipeList').html("Add more ingredients");
-  }
 };
 });
 
-
 // Add up calories - working code
+  
 function updateCalories() {
-  var calorieResult = $('input[type="checkbox"]:checked');
   var sum = 0;
-  var value = $(this).val();
-  value = parseInt(value);
-  sum += value;
-  console.log(sum);
-}
-
+  var calResult = $('input[type="checkbox"]:checked');
+  if (calResult.length > 0) {
+    calResult.each(function() {
+      var value = $(this).val();
+      value = parseInt(value);
+      sum += value;
+    });
+    console.log(sum);
+    $('#numberCalories').html("Calories:</br>" + sum);
+  }
+  };;
   
 
 
