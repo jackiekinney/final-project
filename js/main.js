@@ -61,6 +61,9 @@ $(document).ready(function(){
   });
 */
 
+
+
+/*
 // Add up calories - working code
   var sum = 0;
 $('p input').click(function() {
@@ -69,6 +72,8 @@ $('p input').click(function() {
   sum += value;
   console.log(sum);
 });
+*/
+
 
 // Display only selected checkboxes
 
@@ -83,7 +88,9 @@ function getCheckedBoxes() {
   if (result.length > 0) {
       var resultString = "Your smoothie contains " + result.length + " ingredients</br>";
       result.each(function() {
-        resultString += $(this).attr('id') + "<br/>";
+        var selectedValue = $(this).attr('id');
+        resultString += $('label[for="cb-'+ selectedValue+'"]').text() + "</br>";
+        //$(this).attr('id') + "<br/>";
     });
       $('#recipeList').html(resultString);
   }
@@ -94,10 +101,17 @@ function getCheckedBoxes() {
 });
 
 
+// Add up calories - working code
+function updateCalories() {
+  var calorieResult = $('input[type="checkbox"]:checked');
+  var sum = 0;
+  var value = $(this).val();
+  value = parseInt(value);
+  sum += value;
+  console.log(sum);
+}
 
-
-
-
+  
 
 
 
