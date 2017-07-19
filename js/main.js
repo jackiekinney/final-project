@@ -114,12 +114,10 @@ function updateCalories() {
   };;
   
 // Update "taste" and "health" values of checked ingredients
-
-
 // core of function - works
-$('p input').click(function() {
     var taste = 0;
     var health = 0;
+$('p input').click(function() {
     var foodGroup = $(this).attr('class');
     console.log(foodGroup);
     if (foodGroup === 'greens') {
@@ -127,19 +125,40 @@ $('p input').click(function() {
       health += 1;
     } else if (foodGroup === 'fruit') {
       taste += 2;
-      } else if (foodGroup === 'fats') {
+    } else if (foodGroup === 'fats') {
       taste += 1;
       health += 1;
-      } else if (foodGroup === 'boosters') {
+    } else if (foodGroup === 'boosters') {
       taste -= 2;
       health += 2;
-      } else if (foodGroup === 'veggies') {
+    } else if (foodGroup === 'veggies') {
       health += 1;
-      }
+    }
       var string = "Your smoothie taste factor is " + taste + " and your smoothie nutrient factor is " + health;
       console.log(string);
 });
 
+// when user clicks 'Blend' create message
+/*
+function determineTaste() {
+  if (grossFactor < 0) {
+    // computer choose word from array
+  } else if (grossFactor > 0) {
+    // computer choose word from array
+  }
+}
+
+function determineHealth() {
+  if (healthFactor < 0) {
+    // computer choose word from array
+  } else if (healthFactor > 0) {
+    // computer choose word from array
+  }  
+}
+
+function message(grossFactor, healthFactor) {
+  // display message
+*/
 /*
 function updateValues() {
     var taste = 0;
