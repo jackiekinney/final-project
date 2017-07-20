@@ -36,12 +36,10 @@ $(document).ready(function(){
         // instead of a settings object
       ]
   });
-});
 
 /* DROP DOWN MENUS --- When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 
-$(document).ready(function(){
    $(document).on('click','.dropbtn',function(){
         $('.dropbtn').not(this).next().removeClass('show');
         $(this).next().toggleClass('show');
@@ -50,7 +48,6 @@ $(document).ready(function(){
         if(!$(e.target).closest('.dropdown-content'))
             $('.dropdown-content').removeClass('show');
     });    
-});
 
 // Get values of ingredient when user clicks - WORKING CODE
 /*
@@ -70,12 +67,25 @@ $('p input').click(function() {
 });
 */
 
+var taste = 0;
+var health = 0;
 
-
-$(document).ready(function() {
   $('p input').on('click',function() {
     getCheckedBoxes();
     updateCalories();
+});
+
+  $('p input').on('change',function() {
+      var foodGroup = $(this).attr("name");
+    if ($(this).is(':checked')) {
+      // getValues();
+      addValues(foodGroup);
+    } else {
+      subtractValues(foodGroup);
+      console.log('unchecked');
+    }
+     var string = "Your smoothie taste factor is " + taste + " and your nutrient factor is " + health;
+      console.log(string);
 });
 
 // Display only selected checkboxes in 'Your Recipe' section
@@ -91,7 +101,6 @@ function getCheckedBoxes() {
       $('#recipeList').html(resultString);
   } else $('#recipeList').html("Choose some ingredients!");
 };
-});
 
 // Display sum of calories of checked ingredients
   
@@ -109,28 +118,13 @@ function updateCalories() {
   } else $('#numberCalories').html("");
   };;
   
-
-// WHEN USER CLICKS BLEND
-
-$(document).ready(function() {
-$('#blendBtn').on('click', function() {
-  getValues();
-  determineTaste();
-  determineHealth();
-})
-
-  var taste = 0;
-  var health = 0;
-  var tasteWord;
-  var healthWord;
-
 // determine 'taste' and 'health' values based on user choices
 
-function getValues() {
-  var smoothieResult = $('input[type="checkbox"]:checked');
-  if (smoothieResult.length > 0) {
-    smoothieResult.each(function() {
-      var foodGroup = $(this).attr('class');
+function addValues(foodGroup) {
+  // var smoothieResult = $('input[type="checkbox"]:checked');
+  // if (smoothieResult.length > 0) {
+  //   smoothieResult.each(function() {
+  //     var foodGroup = $(this).attr('class');
       if (foodGroup === 'greens') {
         taste -= 1;
         health += 1;
@@ -146,41 +140,67 @@ function getValues() {
       } else if ( foodGroup === 'veggies') {
         taste += 0;
         health += 1;
-      }
-    })
-    // display number values
-      var string = "Your smoothie taste factor is " + taste + " and your nutrient factor is " + health;
-      console.log(string);
-  } else
-  console.log("You need more ingredients");
+      }     
 }
+
+function subtractValues(foodGroup) {
+      if (foodGroup === 'greens') {
+        taste += 1;
+        health -= 1;
+      } else if (foodGroup === 'fruit') {
+        taste -= 2;
+        health -= 0;
+      } else if (foodGroup === 'fats') {
+        taste -= 1;
+        health -= 1;
+      } else if (foodGroup === 'boosters') {
+        taste += 2;
+        health -= 2;
+      } else if ( foodGroup === 'veggies') {
+        taste -= 0;
+        health -= 1;
+      }
+}
+  // console.log("You need more ingredients");
+
+// WHEN USER CLICKS BLEND
+
+$('#blendBtn').on('click', function() {
+  var tasteWord = determineTaste();
+  var healthWord = determineHealth();
+
+  console.log("Enjoy your " + tasteWord + " and " + healthWord + " smoothie!");
+})
+
 
 // get descriptive word based on taste value
 
 function determineTaste() {
+  var tasteWord;
+
   if (taste === 0) {
-    getNeutral();
-  } else if (taste <= 0) {
-    getYuck();
-  } else if (taste >= 0) {
-    getYum();
+    tasteWord = getNeutral();
+  } else if (taste < 0) {
+    tasteWord = getYuck();
+  } else if (taste > 0) {
+    tasteWord = getYum();
   }
-  console.log("Enjoy your " + tasteWord + " and ");
+  return tasteWord;
 }
 
 // get descriptive word based on health value
 
 function determineHealth() {
-  if (health === 0) {
-    getDessert();
-  } else if (health <= 0 && health >= 2) {
-    getMiddle();
-  } else if (health <= 2) {
-    getHealthy();
+  var healthWord;
+  if (health <= 0) {
+    healthWord = getDessert();
+  } else if (health > 0 && health < 3) {
+    healthWord = getMiddle();
+  } else if (health >= 3) {
+    healthWord = getHealthy();
   } 
-  console.log(healthWord + " smoothie!");
+  return healthWord;
 }
-
 
 // Get random word based on taste factor
 
@@ -191,42 +211,40 @@ function getYuck() {
   var yuck = ['gross', 'nasty', 'horrible', 'yucky', 'disgusting'];
 
   // Select a random option from the plays array (don't focus on this line too much) and store it in the tasteWord variable
-  tasteWord = yuck[Math.floor(Math.random() * yuck.length)];
+  return yuck[Math.floor(Math.random() * yuck.length)];
 }
 
 function getNeutral() {
   var neutral = ['bland', 'ok tasting', 'unenjoyable'];
     // Select a random option from the plays array (don't focus on this line too much) and store it in the tasteWord variable
-  tasteWord = neutral[Math.floor(Math.random() * neutral.length)];
+  return neutral[Math.floor(Math.random() * neutral.length)];
 }
 
 function getYum() {
   var yum = ['tasty', 'delicious', 'yummy', 'scrumptious', 'satisfying', 'tempting'];
     // Select a random option from the plays array (don't focus on this line too much) and store it in the tasteWord variable
-  tasteWord = yum[Math.floor(Math.random() * yum.length)];
+  return yum[Math.floor(Math.random() * yum.length)];
 }
 
 // Get random word based on health factor
-
-// var healthWord;
 
 function getHealthy() {
   // Store an array of options in the plays variable (we'll chat about arrays later in the class)
   var healthy = ['healthy', 'nutritious', 'nourishing', 'wholesome', 'extremely healthy', 'super healthy'];
 
   // Select a random option from the plays array (don't focus on this line too much) and store it in the tasteWord variable
-  healthWord = healthy[Math.floor(Math.random() * healthy.length)];
+  return healthy[Math.floor(Math.random() * healthy.length)];
 }
 
 function getMiddle() {
   var middle = ['kind of healthy', 'guilt-free', 'safe'];
     // Select a random option from the plays array (don't focus on this line too much) and store it in the healthWord variable
-  healthWord = middle[Math.floor(Math.random() * middle.length)];
+  return middle[Math.floor(Math.random() * middle.length)];
 }
 
 function getDessert() {
   var notHealthy = ['not that healthy', 'unhealthy', 'snack', 'dessert', 'nutrient poor'];
     // Select a random option from the plays array (don't focus on this line too much) and store it in the healthWord variable
-  healthWord = notHealthy[Math.floor(Math.random() * notHealthy.length)];
+  return notHealthy[Math.floor(Math.random() * notHealthy.length)];
 }
 });
