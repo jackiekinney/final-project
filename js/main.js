@@ -51,6 +51,7 @@ $(document).ready(function(){
 
   var taste = 0;
   var health = 0;
+  $('#blendBtn').prop('disabled', true);
 
   // Display only selected checkboxes as a list in 'Your Recipe' section
   function getCheckedBoxes() {
@@ -60,9 +61,15 @@ $(document).ready(function(){
         result.each(function() {
           var selectedValue = $(this).attr('id');
           resultString += $('label[for="cb-'+ selectedValue+'"]').text() + "</br>";
-      });
+        });
         $('#recipeList').html(resultString);
     } else $('#recipeList').html("Choose some ingredients!");
+          // BLEND BUTTON disabled unless ingredients selected
+    if (result.length >= 3) {
+        $('#blendBtn').prop('disabled', false);
+    } else if (result.length === 0 || result.length <= 3) {
+        $('#blendBtn').prop('disabled', true);
+    }
   };
 
   // Display sum of calories of checked ingredients in 'Your Recipe' section  
@@ -190,6 +197,7 @@ $(document).ready(function(){
 
   // EVENT HANDLERS
   // When user selects an ingredient, display selection and update calories
+
   $('p input').on('click',function() {
     getCheckedBoxes();
     updateCalories();

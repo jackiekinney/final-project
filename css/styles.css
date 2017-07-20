@@ -12,7 +12,7 @@ base styles
 }
 */
 body, header {
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -31,6 +31,15 @@ article {
 	width: 60%;
 	margin: 0 auto;
 	padding: 50px 0;
+}
+
+.dark {
+	background-color: #3ba06f;
+	color: white;
+}
+
+.light {
+	color: #3ba06f;
 }
 
 /* ----------------------------------------
@@ -68,18 +77,6 @@ h4 {
 
 p {
 	font-size: 1em;
-}
-
-.dark {
-	color: white;
-}
-
-.light {
-	color: #3ba06f;
-}
-
-.light h2 {
-	color: #3ba06f;
 }
 
 /* ----------------------------------------
@@ -137,9 +134,7 @@ header {
 /* ----------------------------------------
 recipes section styling
 ---------------------------------------- */
-.dark {
-	background-color: #3ba06f;
-}
+
 
 #recipe, #make {
 	position: relative;
@@ -166,12 +161,22 @@ recipes section styling
 	margin: 0 auto;
 }
 
+.slick-prev {
+    left: -25px;
+    top: 110px;
+}
+
+.slick-next {
+    right: -25px;
+    top: 110px;
+}
+
 /* ----------------------------------------
 info section styling
 ---------------------------------------- */
+
 .info {
 	color: #374056;
-
 }
 
 .info h2 {
@@ -207,11 +212,26 @@ li {
 }
 
 /* ----------------------------------------
-Make Your Own Recipe List styling
+'Make Your Own' page styling
 ---------------------------------------- */
 
 #recipeList {
 	display: block;
+}
+
+#blendBtn:disabled {
+	opacity: 0.5;
+	background-color: #ccc;
+}
+
+#blendBtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 1.5em;
 }
 
 /* -----------------------------------------
@@ -257,6 +277,7 @@ Drop down menu styling
     padding: 12px 16px;
     display: block;
     text-align: left;
+    padding: 20px;
 }
 
 /* Change color of dropdown links on hover */
@@ -277,4 +298,3 @@ Drop down menu styling
 	position: relative;
 	z-index: 1000;
 }
-
