@@ -250,6 +250,7 @@ Drop down menu styling
     border: none;
     cursor: pointer;
     position: relative;
+    margin: 0 auto;
 }
 
 /* Dropdown button on hover & focus */
@@ -303,3 +304,28 @@ Drop down menu styling
 	position: relative;
 	z-index: 1000;
 }
+
+/*
+
+colors for smoothie:
+
+brown: #636826;
+red: #9e2c35;
+green: #6c9e2c;
+yellow: #d9db8c;
+
+*?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

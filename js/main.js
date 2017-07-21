@@ -51,7 +51,64 @@ $(document).ready(function(){
 
   var taste = 0;
   var health = 0;
+  var green = 0;
+  var red = 0;
+  var yellow = 0;
   $('#blendBtn').prop('disabled', true);
+
+  /*---------------------------------
+
+ COLOR LOGIC
+
+----------------------------------*/
+
+  function colorValues(foodColor) {
+    if (foodColor === 'grn') {
+      green += 1;
+    } else if (foodColor === 'blu') {
+      green += 2;
+      red += 1;
+    } else if (foodColor === 'red') {
+      red += 1;
+    } else if (foodColor === 'ylw') {
+      yellow += 1;
+    }
+  }
+
+  function subtractColor(foodColor) {
+    if (foodColor === 'grn') {
+      green -= 1;
+    } else if (foodColor === 'blu') {
+      green -= 2;
+      red -= 1;
+    } else if (foodColor === 'red') {
+      red -= 1;
+    } else if (foodColor === 'ylw') {
+      yellow -= 1;
+    }
+  }
+
+  function determineColor() {
+    var color;
+
+    if (green === 0 && red === 0 && yellow === 0) {
+      color = 'beige';
+    } else if (green === 0 && red <= 1 && yellow < 0) {
+      color = 'orange';
+    } else if (green > 0 && red === 0) {
+      color = 'green';
+    } else if (green > 0 && red === 0 && yellow > 0) {
+      color = 'yellowish green';
+    } else if (green === 0 && red > 0) {
+      color = 'red';
+    } else if (green > 0 && red > 0 && green > red) {
+      color = 'dark green';
+    } else if (green > 0 && red > 0 && red > green) {
+      color = 'reddish brown';
+    }
+    return color;
+  }
+
 
   // Display only selected checkboxes as a list in 'Your Recipe' section
   function getCheckedBoxes() {
@@ -61,15 +118,15 @@ $(document).ready(function(){
         result.each(function() {
           var selectedValue = $(this).attr('id');
           resultString += $('label[for="cb-'+ selectedValue+'"]').text() + "</br>";
-        });
+      });
         $('#recipeList').html(resultString);
     } else $('#recipeList').html("Choose some ingredients!");
-          // BLEND BUTTON disabled unless ingredients selected
+    // BLEND BUTTON disabled unless at least 3 ingredients selected
     if (result.length >= 3) {
         $('#blendBtn').prop('disabled', false);
     } else if (result.length === 0 || result.length <= 3) {
         $('#blendBtn').prop('disabled', true);
-    }
+  }
   };
 
   // Display sum of calories of checked ingredients in 'Your Recipe' section  
@@ -206,23 +263,29 @@ $(document).ready(function(){
   // When user selects or deselects ingredient, update taste and health values
   $('p input').on('change',function() {
       var foodGroup = $(this).attr("class");
+      var foodColor = $(this).attr("name");
     if ($(this).is(':checked')) {
       // Run function to add values associated with item's class
       addValues(foodGroup);
+      colorValues(foodColor);
     } else {
       // Run function to subtract values associated with item's class
       subtractValues(foodGroup);
+      subtractColor(foodColor);
     }
      console.log("Your smoothie taste factor is " + taste + " and your nutrient factor is " + health);
+     console.log("Green: " + green + " Red: " + red + " Yellow: " + yellow);
   });
 
   // When user clicks blend, display message about smoothie
   $('#blendBtn').on('click', function() {
     var tasteWord = determineTaste();
     var healthWord = determineHealth();
+    var color = determineColor();
 
     $('#resultMessage').html("Enjoy your " + tasteWord + ", " + healthWord + " smoothie!");
     console.log("Enjoy your " + tasteWord + " and " + healthWord + " smoothie!");
+    console.log("Your smoothie color is " + color);
   })
 
 });
