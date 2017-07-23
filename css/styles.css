@@ -12,7 +12,7 @@ base styles
 }
 */
 body, header {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
@@ -84,7 +84,7 @@ header
  ---------------------------------------- */
 
 header {
-	background-color: #ede66d;
+	background-color: #bbe2aa;
 	margin: 0;
 	text-align: center;
 }
@@ -110,6 +110,8 @@ header {
 	margin: 0;
 	color: #374056;
 	text-transform: uppercase;
+	box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+	z-index: 100;
 }
 
 .main-nav {
