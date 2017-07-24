@@ -92,19 +92,19 @@ $(document).ready(function(){
     var color;
 
     if (green === 0 && red === 0 && yellow === 0) {
-      color = 'beige';
+      color = '06';
     } else if (green === 0 && red <= 1 && yellow < 0) {
-      color = 'orange';
+      color = '05';
     } else if (green > 0 && red === 0) {
-      color = 'green';
+      color = '01';
     } else if (green > 0 && red === 0 && yellow > 0) {
       color = 'yellowish green';
     } else if (green === 0 && red > 0) {
-      color = 'red';
+      color = '02';
     } else if (green > 0 && red > 0 && green > red) {
-      color = 'dark green';
+      color = '04';
     } else if (green > 0 && red > 0 && red > green) {
-      color = 'reddish brown';
+      color = '03';
     }
     return color;
   }
@@ -114,13 +114,13 @@ $(document).ready(function(){
   function getCheckedBoxes() {
     var result = $('input[type="checkbox"]:checked');
     if (result.length > 0) {
-        var resultString = "Your smoothie contains " + result.length + " ingredients</br>";
+        var resultString = "<h4>Your smoothie contains " + result.length + " ingredients</h4></br><hr /></br>";
         result.each(function() {
           var selectedValue = $(this).attr('id');
           resultString += $('label[for="cb-'+ selectedValue+'"]').text() + "</br>";
       });
-        $('#recipeList').html(resultString);
-    } else $('#recipeList').html("Choose some ingredients!");
+        $('#recipeItems').html(resultString);
+    } else $('#recipeItems').html("Choose some ingredients!");
     // BLEND BUTTON disabled unless at least 3 ingredients selected
     if (result.length >= 3) {
         $('#blendBtn').prop('disabled', false);
@@ -283,9 +283,13 @@ $(document).ready(function(){
     var healthWord = determineHealth();
     var color = determineColor();
 
-    $('#resultMessage').html("Enjoy your " + tasteWord + ", " + healthWord + " smoothie!");
+    $('#resultMessage').html("<h2>Enjoy your " + tasteWord + ", " + healthWord + " smoothie!</h2>");
     console.log("Enjoy your " + tasteWord + " and " + healthWord + " smoothie!");
+    var image = 'images/drinks-' + color + '.png';
+    var img = $('<img />', {src : image});
+    $('#smoothieColor').html(img);
     console.log("Your smoothie color is " + color);
+    console.log(image);
   })
 
 });

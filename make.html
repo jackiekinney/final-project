@@ -36,7 +36,7 @@
 		<div class="carousel" id="makeCarousel">
 			<div class="responsive">
 
-				<div class="smoothie-profile dropdown clearfix">
+				<div class="smoothie-profile dropdown">
 					<div class="dropbtn img-circle" id="leafyGreens"><img src="images/filler2-01.png">Greens</div>
 					<div id="greensDpdn" class="dropdown-content">
 						<p><input type="checkbox" class="greens" name="grn" id="kale" value="10"><label for="cb-kale">Kale</label></p>
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 
-				<div class="smoothie-profile dropdown clearfix" id="fruitMen">
+				<div class="smoothie-profile dropdown" id="fruitMen">
 					<div class="dropbtn img-circle" id="fruit"><img src="images/filler3-01.png">Fruit</div>
 					<div id="fruitDpdn" class="dropdown-content">
 						<p><input type="checkbox" class="fruit" name="ylw" id="banana" value="100"><label for="cb-banana">Banana</label></p>
@@ -129,36 +129,41 @@
 	
 	<section id="yourRecipe" class="light">
 		<article class="recipe-list">
-			<h2>Your Recipe</h2>
-			<ul id='recipeList'>
-				<li></li>
-			</ul>
-			<div id="numberCalories"></div>
-			<div id="smoothiePic"></div>
-			<button id="blendBtn">Blend</button>
-			<div id=smoothieResult>
-				<div id="glass"></div>
-				<div id="colorPart">
-					<div id="oval"></div>
-					<div id="ovaltp"></div>
-					<div id="oval2"></div>
-				</div>
+			<div id='recipeList'>
+				<h2>Your Recipe</h2>
+				<div id="recipeItems"></div>
 			</div>
-		</article>	
+			<div id="numberCalories"></div>
+		</article>
+		<article class="blender">
+			<p><img src="images/blender-01.png"></p>
+			<button id="blendBtn"><a href="make.html#blend">Blend</a></button>
+		</article>
 	</section>
 
-		<section id="blend" class="dark">
-			<div id="resultMessage"></div>
-		</section>
+	<section id="blend" class="dark">
+		<div id="resultMessage"></div>
+		<div id="smoothieColor">
+			<img src="" alt="" id="imgSmoothie">
+		</div>
+		<!-- <div id=smoothieResult>
+			<div id="glass"></div>
+			<div id="colorPart">
+				<div id="oval"></div>
+				<div id="ovaltp"></div>
+				<div id="oval2"></div>
+			</div>
+		</div> -->
+	</section>
 
-		<footer></footer>
+	<footer></footer>
 
-		<script
-		src="https://code.jquery.com/jquery-3.2.1.min.js"
-		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-		crossorigin="anonymous"></script>
-		<script type="text/javascript" src="slick/slick.min.js"></script>
-		<script type="text/javascript" src='js/main.js'></script>
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src='js/main.js'></script>
 
 	</body>
 	</html>
