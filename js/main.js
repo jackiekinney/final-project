@@ -91,19 +91,19 @@ $(document).ready(function(){
   function determineColor() {
     var color;
 
-    if (green === 0 && red === 0 && yellow === 0) {
+    if (green === 0 && red === 0 && yellow <= 1) {
       color = '06'; // beige
-    } else if (green === 0 && red <= 1 && yellow > 0) {
+    } else if (green === 0 && red === 0 && yellow > 1) {
       color = '05'; // orange
     } else if (green > 0 && red === 0 && yellow === 0) {
       color = '01'; // green
     } else if (green > 0 && red === 0 && yellow > 0) {
       color = '07'; // yellowish-green
-    } else if (green === 0 && red > 0) {
-      color = '02'; // reddish-brown
-    } else if (green > 0 && red > 0 && green > red) {
+    } else if (green === 0 && red > 0 && yellow > 0) {
+      color = '02'; // red
+    } else if (green > 0 && red > 0 && yellow >= 0 && green >= red) {
       color = '04'; // dark-green
-    } else if (green > 0 && red > 0 && red > green) {
+    } else if (green > 0 && red > 0 && yellow >= 0 && red > green) {
       color = '03'; // reddish-brown
     }
     return color;
@@ -286,7 +286,8 @@ $(document).ready(function(){
     $('#resultMessage').html("<h2>Enjoy your " + tasteWord + ", " + healthWord + " smoothie!</h2>");
     var image = 'images/drinks-' + color + '.png';
     var img = $('<img />', {src : image});
-    $('#smoothieColor').html(img).addClass('circle');
+    $('#smoothieImage').html(img);
+    $('#smoothieColor').addClass('circle');    
     console.log(color);
   })
 

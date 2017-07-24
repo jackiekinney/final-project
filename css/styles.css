@@ -363,18 +363,24 @@ Drop down menu styling
 }
 
 .circle {
-	height: 410px;
-	width: 410px;
+	height: 300px;
+	width: 300px;
 	border-radius: 50%;
 	background-color: white;
 	margin: 50px auto;
 }
 
-#smoothieColor img {
-	height: 400px;
-	width: auto;
-	margin: 0 auto;
-	padding: 20px;
+#smoothieImage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#smoothieImage img {
+	height: auto;
+	width: 400px;
+	padding: 40px;
+	z-index: 10;
 }
 
 #colorPart {
