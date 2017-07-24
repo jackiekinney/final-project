@@ -17,6 +17,7 @@ body, header {
 
 a {
 	text-decoration: none;
+	color: #3ba06f;
 }
 
 a:hover {
@@ -40,6 +41,11 @@ article {
 
 .light {
 	color: #3ba06f;
+}
+
+.wrapper {
+	width: 700px;
+	margin: 0 auto;
 }
 
 /* ----------------------------------------
@@ -276,11 +282,6 @@ hr {
     margin: 0;
 }
 
-#smoothieColor {
-	width: 100px;
-	height: 100px;
-}
-
 /* -----------------------------------------
 
 Drop down menu styling
@@ -357,13 +358,23 @@ Drop down menu styling
 ---------------------------------------- */
 
 #blend {
-	height: 500px;
+	height: 600px;
 	display: flex;
 }
 
-#smoothieResult {
-	padding: 50px 0 50px;
-	position: absolute;
+.circle {
+	height: 410px;
+	width: 410px;
+	border-radius: 50%;
+	background-color: white;
+	margin: 50px auto;
+}
+
+#smoothieColor img {
+	height: 400px;
+	width: auto;
+	margin: 0 auto;
+	padding: 20px;
 }
 
 #colorPart {
@@ -415,18 +426,6 @@ Drop down menu styling
 	-webkit-border-radius: 100px / 50px;
 	border-radius: 150px / 50px;
 }
-
-/*
-
-colors for smoothie:
-
-brown: #636826;
-red: #9e2c35;
-green: #6c9e2c;
-yellow: #d9db8c;
-
-*?
-
 
 
 
