@@ -298,6 +298,23 @@ $(document).ready(function(){
   // EVENT HANDLERS
   // When user selects an ingredient, display selection and update calories
 
+  $(window).on('scroll', function () {
+  // Step 1: Google $(window).scrollTop();
+  var distanceScrolled = $(window).scrollTop();
+
+  console.log('The distance scrolled is: ' + distanceScrolled);
+
+  // Step 2: Write Rest of JS here
+  var viewableOffset = $('.nav-container').offset().top - $(window).scrollTop();
+  console.log(viewableOffset);
+
+    if (distanceScrolled >= 416 && viewableOffset <= 0) {
+    $('.nav-container').addClass('scrolled');
+    } else {
+    $('.nav-container').removeClass('scrolled');
+    }
+});
+
   $('.premade').on('click', function(event) {
     // event.preventDefault();
     // console.log('premade');

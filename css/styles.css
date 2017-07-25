@@ -313,15 +313,22 @@ Drop down menu styling
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #bbe2aa;
     color: white;
-    padding: 16px;
     font-size: 16px;
-    width: 154px;
+    height: 175px;
+    width: 175px;
     border: none;
     cursor: pointer;
     position: relative;
     margin: 0 auto;
+}
+
+.dropbtn img {
+	margin: 0px auto;
+	height: 175px;
+	width: auto;
+	padding: 25px;
 }
 
 /* Dropdown button on hover & focus */
@@ -330,9 +337,11 @@ Drop down menu styling
 }
 
 /* The container <div> - needed to position the dropdown content */
+
 .dropdown {
     position: relative;
     display: inline-block;
+   	margin: 40px 10px 50px;
 }
 
 .dropdown label {
@@ -423,10 +432,21 @@ Drop down menu styling
 }
 
 
-
-
-
-
+.scrolled {
+  /* PART 1: Write styles here to convert the nav into a sticky nav. */
+	background-color: #f7f7f4;
+	padding: 20px;
+	position: relative;
+	margin: 0;
+	color: #374056;
+	text-transform: uppercase;
+	box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+  	position: fixed;
+  	top: 0;
+  	transition: all .3s ease-in 2s;
+  	width: 100%;
+}
 
 
 
