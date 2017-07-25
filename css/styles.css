@@ -145,9 +145,7 @@ header {
 recipes section styling
 ---------------------------------------- */
 
-
-#recipe, #make {
-	position: relative;
+#make {
 	text-align: center;
 }
 
@@ -155,6 +153,7 @@ recipes section styling
 	height: 300px;
 	width: 100%;
 	position: relative;
+	text-align: center;
 }
 
 .carousel {
@@ -171,12 +170,12 @@ recipes section styling
 	margin: 0px auto;
 }
 
-.slick-prev {
+#make .slick-prev {
     left: -25px;
     top: 110px;
 }
 
-.slick-next {
+#make .slick-next {
     right: -25px;
     top: 110px;
 }

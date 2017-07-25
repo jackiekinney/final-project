@@ -60,12 +60,42 @@ $(document).ready(function(){
     {
       name: 'Green Monster',
       id: 'grnMonster',
-      ingredients: ['banana', 'kale', 'spinach', 'pineapple', 'lime']
+      ingredients: ['Banana', 'Kale', 'Spinach', 'Wheatgrass', 'Apple', 'Lime', 'Almond Milk']
     },
     {
-      name: 'Ginger Carrot',
+      name: 'Super Food Smoothie',
+      id: 'superSmthie',
+      ingredients: ['Açai', 'Kale', 'Blueberries', 'Wheatgrass', 'Lime']
+    },
+    {
+      name: 'Fruit and Nut Smoothie',
+      id: 'fruitNut',
+      ingredients: ['Raspberries', 'Almond Butter', 'Spinach', 'Flaxseed', 'Lemon', 'Water']
+    },
+    {
+      name: 'Blueberry Avocado Smoothie',
+      id: 'hydraSmthie',
+      ingredients: ['Avocado', 'Mango', 'Flaxseed', 'Blueberries', 'Kale', 'Coconut Water']
+    },
+    {
+      name: 'Green Piña Colada',
+      id: 'pinaColada',
+      ingredients: ['Kale', 'Coconut Oil', 'Pineapple', 'Lime', 'Coconut Water']
+    },
+    {
+      name: 'Ginger Carrot Smoothie',
       id: 'ginCarrot',
-      ingredients: ['banana', 'ginger', 'carrot', 'tumeric', 'lemon']
+      ingredients: ['Banana', 'Ginger', 'Carrot Juice', 'Tumeric', 'Lemon Juice']
+    },
+    {
+      name: 'Very Berry Smoothie',
+      id: 'berrySmthie',
+      ingredients: ['Blueberries', 'Raspberries', 'Strawberries', 'Lime', 'Banana', 'Chia Seed', 'Water']
+    },
+    {
+      name: 'Tropical Smoothie',
+      id: 'tropical',
+      ingredients: ['Mango', 'Passionfruit', 'Banana', 'Lime']
     }
   ];
 
@@ -276,7 +306,7 @@ $(document).ready(function(){
   */
 
   $('.premade').on('click', function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     // console.log('premade');
     var selected = $(this).children().attr('id');
     console.log(selected);
@@ -287,9 +317,19 @@ $(document).ready(function(){
       if (selected === item.id) {
         selectedSmoothie = item;
         console.log(selectedSmoothie.ingredients);
-      }
-    })
 
+      }
+    });
+
+    $('#recipeItems').empty();
+    $('#recipeItems').append("<ul>"); // create start of list
+    // loop to write out all ingredients
+    console.log(selectedSmoothie.name);
+    $('#smoothieName').html(selectedSmoothie.name);
+    selectedSmoothie.ingredients.forEach(function(item) {
+      $('#recipeItems').append("<li>" + item + "</li>");  
+    });
+    $('#recipeItems').append("</ul>"); // create end of list
 
 
 
