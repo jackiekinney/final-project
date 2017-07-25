@@ -298,13 +298,6 @@ $(document).ready(function(){
   // EVENT HANDLERS
   // When user selects an ingredient, display selection and update calories
 
-  /*
-  $('#ginCarrot').on('click', function() {
-    $('#resultMessage').html("<h2>Enjoy your Ginger Carrot Smoothie!</h2>");
-    $('#recipeItems').html("Banana</br>Tumeric</br>Ginger</br>Pineapple</br>Carrot Juice</br>Lemon");
-  });
-  */
-
   $('.premade').on('click', function(event) {
     // event.preventDefault();
     // console.log('premade');
@@ -330,10 +323,13 @@ $(document).ready(function(){
       $('#recipeItems').append("<li>" + item + "</li>");  
     });
     $('#recipeItems').append("</ul>"); // create end of list
-
-
-
   });
+
+
+  $('#blndAnother').on('click', function() {
+    location.reload();
+  });
+
 
   $('p input').on('click',function() {
     getCheckedBoxes();
@@ -363,7 +359,7 @@ $(document).ready(function(){
     var healthWord = determineHealth();
     var color = determineColor();
 
-    $('#resultMessage').html("<h2>Enjoy your " + tasteWord + ", " + healthWord + " smoothie!</h2>");
+    $('#resultMessage').html("<h2>Enjoy your<span> " + tasteWord + ", " + healthWord + " </span>smoothie!</h2>");
     var image = 'images/drinks-' + color + '.png';
     var img = $('<img />', {src : image});
     $('#smoothieImage').html(img);

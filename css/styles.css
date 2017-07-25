@@ -145,6 +145,13 @@ header {
 recipes section styling
 ---------------------------------------- */
 
+#carouselOne {
+	display: flex;
+	justify-content: space-between;
+	background-color: #3ba06f;
+	color: white;
+}
+
 #make {
 	text-align: center;
 }
@@ -166,8 +173,17 @@ recipes section styling
 	margin: 40px 10px 50px;
 }
 
+a .smoothie-profile {
+	background-color: #bbe2aa;
+	width: 200px;
+	height: 200px;
+}
+
 .smoothie-profile img {
 	margin: 0px auto;
+	height: 100px;
+	width: auto;
+	padding: 25px 10px 0;
 }
 
 #make .slick-prev {
@@ -223,6 +239,7 @@ li {
 /* ----------------------------------------
 'Make Your Own' page styling
 ---------------------------------------- */
+
 #yourRecipe {
 	display: flex;
 	width: 70%;
@@ -258,6 +275,11 @@ li {
 #recipeList h4 {
 	font-size: 1.5em;
 	margin: 20px 0 0 0;
+}
+
+#resultMessage span {
+	font-size: 1.5em;
+	color: yellow;	
 }
 
 #blendBtn:disabled {
