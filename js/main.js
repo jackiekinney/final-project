@@ -55,6 +55,19 @@ $(document).ready(function(){
   var red = 0;
   var yellow = 0;
   $('#blendBtn').prop('disabled', true);
+  var selectedSmoothie = {};
+  var smoothieList = [
+    {
+      name: 'Green Monster',
+      id: 'grnMonster',
+      ingredients: ['banana', 'kale', 'spinach', 'pineapple', 'lime']
+    },
+    {
+      name: 'Ginger Carrot',
+      id: 'ginCarrot',
+      ingredients: ['banana', 'ginger', 'carrot', 'tumeric', 'lemon']
+    }
+  ];
 
   /*---------------------------------
 
@@ -254,6 +267,33 @@ $(document).ready(function(){
 
   // EVENT HANDLERS
   // When user selects an ingredient, display selection and update calories
+
+  /*
+  $('#ginCarrot').on('click', function() {
+    $('#resultMessage').html("<h2>Enjoy your Ginger Carrot Smoothie!</h2>");
+    $('#recipeItems').html("Banana</br>Tumeric</br>Ginger</br>Pineapple</br>Carrot Juice</br>Lemon");
+  });
+  */
+
+  $('.premade').on('click', function(event) {
+    event.preventDefault();
+    // console.log('premade');
+    var selected = $(this).children().attr('id');
+    console.log(selected);
+
+    //loop through smoothie list to find selected smoothie
+    smoothieList.forEach(function(item) {
+      // console.log(item.id);
+      if (selected === item.id) {
+        selectedSmoothie = item;
+        console.log(selectedSmoothie.ingredients);
+      }
+    })
+
+
+
+
+  });
 
   $('p input').on('click',function() {
     getCheckedBoxes();
