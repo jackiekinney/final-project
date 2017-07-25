@@ -17,7 +17,8 @@ body, header {
 
 a {
 	text-decoration: none;
-	color: #3ba06f;
+	color: #374056;
+	text-align: center;
 }
 
 a:hover {
@@ -357,9 +358,8 @@ Drop down menu styling
 'Smoothie Result' styling
 ---------------------------------------- */
 
-#blend {
-	height: 600px;
-	display: flex;
+.blendStyle {
+	padding: 50px;
 }
 
 .circle {
@@ -383,58 +383,22 @@ Drop down menu styling
 	z-index: 10;
 }
 
-#colorPart {
-	position: absolute;
-	left: 0px;
-	border-top: 200px solid red;
-	border-left: 30px solid transparent;
-	border-right: 30px solid transparent;
-	height: 0;
-	width: 175px;
-	margin: 20px auto;
-	padding: 10px;
+.buttons {
+	display: flex;
+	justify-content: center
 }
 
-#oval {
-	position: absolute;
-	bottom: 195px;
-	left: -30px;
-	width: 175px;
-	height: 50px;
-	background: red;
-	-moz-border-radius: 100px / 50px;
-	-webkit-border-radius: 100px / 50px;
-	border-radius: 150px / 50px;
+.action {
+	display: none;
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 1.5em;
+	margin: 50px 10px;
 }
-
-#ovaltp {
-	position: relative;
-	bottom: 235px;
-	left: -40px;
-	width: 175px;
-	height: 50px;
-	background: white;
-	opacity: 0.5;
-	-moz-border-radius: 100px / 50px;
-	-webkit-border-radius: 100px / 50px;
-	border-radius: 150px / 50px;
-	z-index: 10;
-}
-
-#oval2 {
-	position: relative;
-	bottom: 83px;
-	left: -10px;
-	width: 115px;
-	height: 40px;
-	background: red;
-	-moz-border-radius: 100px / 50px;
-	-webkit-border-radius: 100px / 50px;
-	border-radius: 150px / 50px;
-}
-
-
-
 
 
 

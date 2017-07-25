@@ -287,7 +287,9 @@ $(document).ready(function(){
     var image = 'images/drinks-' + color + '.png';
     var img = $('<img />', {src : image});
     $('#smoothieImage').html(img);
-    $('#smoothieColor').addClass('circle');    
+    $('#smoothieColor').addClass('circle');
+    $('#blend').addClass('blendStyle');
+    $('.action').addClass('show');
     console.log(color);
   })
 
