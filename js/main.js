@@ -9,7 +9,7 @@ $(document).ready(function(){
   slidesToScroll: 4,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1080,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -18,14 +18,14 @@ $(document).ready(function(){
       }
     },
     {
-      breakpoint: 600,
+      breakpoint: 800,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 540,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
@@ -40,14 +40,16 @@ $(document).ready(function(){
   /* DROP DOWN MENUS --- When the user clicks on the button, 
   toggle between hiding and showing the dropdown content */
 
-  $(document).on('click','.dropbtn',function(){
-      $('.dropbtn').not(this).next().removeClass('show');
-      $(this).next().toggleClass('show');
+  $(document).on('click','.dropbtn', function(e) {
+      $('.dropbtn').not(this).next().removeClass('dcshow');
+      $(this).next().toggleClass('dcshow');
+      e.stopPropagation();
   });
-  $(document).on('click',function(e){
-      if(!$(e.target).closest('.dropdown-content'))
-          $('.dropdown-content').removeClass('show');
-  });    
+  $(document).on('click',function(e) {
+      if($(e.target).is('.dropdown-content') === false && $(e.target).is('p') === false && $(e.target).is('input') === false && $(e.target).is('p input') === false) {
+      $('.dropdown-content').removeClass('dcshow');
+      }
+  });
 
   var taste = 0;
   var health = 0;

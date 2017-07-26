@@ -5,12 +5,7 @@ base styles
 	box-sizing: border-box;
 	font-size: 16px;
 }
-/*
-.clearfix {
-	content: "";
-  	overflow: auto;
-}
-*/
+
 body, header {
 	font-family: 'Josefin Sans', sans-serif;
 }
@@ -134,10 +129,9 @@ header {
 	padding: 50px 0;
 }
 
-#logo-img {
-	background: url('../images/logo-01.png') no-repeat center;
-	width: 200px;
-	height: 200px;
+#logo-img img {
+	max-width: 200px;
+	height: auto;
 	margin: 0 auto;
 }
 
@@ -154,6 +148,7 @@ recipes section styling
 
 #make {
 	text-align: center;
+	height: 360px;
 }
 
 #recipe {
@@ -174,7 +169,6 @@ recipes section styling
 }
 
 a .smoothie-profile {
-	background-color: #bbe2aa;
 	width: 200px;
 	height: 200px;
 }
@@ -240,32 +234,19 @@ li {
 'Make Your Own' page styling
 ---------------------------------------- */
 
-#yourRecipe {
-	display: flex;
-	width: 70%;
+.blender img {
+	display: block;
 	margin: 0 auto;
-	align-content: space-around;
-}
-
-.recipe-list {
-	width: 50%;
-	margin: 0 50px;
 }
 
 #numberCalories {
 	margin: 20px 0;
 }
 
-.blender {
-	width: 30%;
-	margin: 50px;
-}
-
 #recipeList {
 	display: block;
 	border: dotted #bbe2aa;
 	padding: 20px;
-	margin: 40px 0 0 0;
 }
 
 #recipeList h2 {
@@ -295,6 +276,7 @@ li {
 	border-radius: 10px;
 	font-family: 'Pacifico', cursive;
 	font-size: 1.5em;
+	display: block;
 	margin: 30px auto;
 }
 
@@ -306,15 +288,12 @@ hr {
 }
 
 /* -----------------------------------------
-
-Drop down menu styling
-
+Drop down button styling
 -------------------------------------------*/
 
 /* Dropdown Button */
 .dropbtn {
     background-color: #bbe2aa;
-    color: white;
     font-size: 16px;
     height: 175px;
     width: 175px;
@@ -322,10 +301,22 @@ Drop down menu styling
     cursor: pointer;
     position: relative;
     margin: 0 auto;
+    outline: none;
+}
+
+.dropbtn:active {
+	outline: 0 !important;
+    border: none;
+    box-shadow: none;
+}
+
+.dropbtn span {
+	position: relative;
+	top: -40px;
+	color: #374056;
 }
 
 .dropbtn img {
-	margin: 0px auto;
 	height: 175px;
 	width: auto;
 	padding: 25px;
@@ -334,7 +325,14 @@ Drop down menu styling
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
+    outline: 0 !important;
+    border: none;
+    box-shadow: none;
 }
+
+/* -----------------------------------------
+Drop down menu styling
+-------------------------------------------*/
 
 /* The container <div> - needed to position the dropdown content */
 
@@ -364,13 +362,16 @@ Drop down menu styling
     display: block;
     text-align: left;
     padding: 20px;
+    outline: 0 !important;
+    border: none;
+    box-shadow: none;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content p:hover {
 	background-color: #f1f1f1;
 	position: relative;
-	z-index: 1000;
+	z-index: 100;
 	padding: 20px;
 }
 
@@ -382,9 +383,17 @@ Drop down menu styling
 .show {
 	display: block;
 	position: relative;
-	z-index: 1000;
+	z-index: 100;
 }
 
+.dcshow {
+	display: block;
+	position: relative;
+	z-index: 100;
+    outline: 0 !important;
+    border: none;
+    box-shadow: none;
+}
 /* ----------------------------------------
 'Smoothie Result' styling
 ---------------------------------------- */
@@ -448,6 +457,61 @@ Drop down menu styling
   	width: 100%;
 }
 
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
 
 
 
+@media (max-width:768px) {
+		.flex-container {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 479px) {
+  /* Header */
+
+	#logo-img img {
+		width: 150px;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	h1 {
+		font-family: 'Pacifico', cursive;
+		font-size: 3em;
+		color: #3ba06f;
+	}
+
+	h2 {
+		font-size: 1.4em;
+		margin: 0 0 10px;
+		padding: 50px 0 0;
+
+	}
+
+	h3 {
+		font-size: 1.5em;
+		margin: -5px 0;
+		letter-spacing: 1px;
+	}
+
+	h1, h2, h3 {
+		text-align: center;
+		font-family: 'Pacifico', cursive;
+	}
+
+	h4 {
+		font-size: 1.2em;
+		padding: 5px 0 0;
+	}
+
+	p {
+		font-size: 1em;
+	}
+}
