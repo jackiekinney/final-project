@@ -310,7 +310,7 @@ $(document).ready(function(){
   var viewableOffset = $('.nav-container').offset().top - $(window).scrollTop();
   console.log(viewableOffset);
 
-    if (distanceScrolled >= 416 && viewableOffset <= 0) {
+    if (distanceScrolled >= 405 && viewableOffset <= 0) {
     $('.nav-container').addClass('scrolled');
     } else {
     $('.nav-container').removeClass('scrolled');
