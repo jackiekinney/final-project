@@ -384,7 +384,7 @@ Drop down menu styling
 .dropdown-content p:hover {
 	background-color: #f1f1f1;
 	position: relative;
-	z-index: 100;
+	z-index: 500;
 	padding: 20px;
 }
 
