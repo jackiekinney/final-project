@@ -62,41 +62,49 @@ $(document).ready(function(){
     {
       name: 'Green Monster',
       id: 'grnMonster',
+      pic: 'smoothies-05.png',
       ingredients: ['Banana', 'Kale', 'Spinach', 'Wheatgrass', 'Apple', 'Lime', 'Almond Milk']
     },
     {
       name: 'Super Food Smoothie',
       id: 'superSmthie',
+      pic: 'smoothies-07.png',
       ingredients: ['Açai', 'Kale', 'Blueberries', 'Wheatgrass', 'Lime']
     },
     {
       name: 'Fruit and Nut Smoothie',
       id: 'fruitNut',
+      pic: 'smoothies-08.png',
       ingredients: ['Raspberries', 'Almond Butter', 'Spinach', 'Flaxseed', 'Lemon', 'Water']
     },
     {
       name: 'Blueberry Avocado Smoothie',
       id: 'hydraSmthie',
+      pic: 'smoothies-06.png',
       ingredients: ['Avocado', 'Mango', 'Flaxseed', 'Blueberries', 'Kale', 'Coconut Water']
     },
     {
       name: 'Green Piña Colada',
       id: 'pinaColada',
+      pic: 'smoothies-02.png',
       ingredients: ['Kale', 'Coconut Oil', 'Pineapple', 'Lime', 'Coconut Water']
     },
     {
       name: 'Ginger Carrot Smoothie',
       id: 'ginCarrot',
+      pic: 'smoothies-03.png',
       ingredients: ['Banana', 'Ginger', 'Carrot Juice', 'Tumeric', 'Lemon Juice']
     },
     {
       name: 'Very Berry Smoothie',
       id: 'berrySmthie',
+      pic: 'smoothies-01.png',
       ingredients: ['Blueberries', 'Raspberries', 'Strawberries', 'Lime', 'Banana', 'Chia Seed', 'Water']
     },
     {
       name: 'Tropical Smoothie',
       id: 'tropical',
+      pic: 'smoothies-04.png',
       ingredients: ['Mango', 'Passionfruit', 'Banana', 'Lime']
     }
   ];
@@ -275,7 +283,7 @@ $(document).ready(function(){
   }
 
   function getYum() {
-    var yum = ['tasty', 'delicious', 'yummy', 'scrumptious', 'satisfying', 'tempting'];
+    var yum = ['tasty', 'delicious', 'yummy', 'drool-worthy', 'mouthwatering', 'tempting'];
     return yum[Math.floor(Math.random() * yum.length)];
   }
 
@@ -298,17 +306,14 @@ $(document).ready(function(){
 
 
   // EVENT HANDLERS
-  // When user selects an ingredient, display selection and update calories
 
   $(window).on('scroll', function () {
-  // Step 1: Google $(window).scrollTop();
   var distanceScrolled = $(window).scrollTop();
 
-  console.log('The distance scrolled is: ' + distanceScrolled);
+  // console.log('The distance scrolled is: ' + distanceScrolled);
 
-  // Step 2: Write Rest of JS here
   var viewableOffset = $('.nav-container').offset().top - $(window).scrollTop();
-  console.log(viewableOffset);
+  // console.log(viewableOffset);
 
     if (distanceScrolled >= 405 && viewableOffset <= 0) {
     $('.nav-container').addClass('scrolled');
@@ -342,6 +347,12 @@ $(document).ready(function(){
       $('#recipeItems').append("<li>" + item + "</li>");  
     });
     $('#recipeItems').append("</ul>"); // create end of list
+    var image = 'images/' + selectedSmoothie.pic;
+    var img = $('<img />', {src : image});
+    console.log(image);
+    console.log(img);
+    $('#smoothiePic').empty();
+    $('#smoothiePic').html(img);
   });
 
 
@@ -355,6 +366,7 @@ $(document).ready(function(){
     updateCalories();
   });
 
+  // When user selects an ingredient, display selection and update calories
   // When user selects or deselects ingredient, update taste and health values
   $('p input').on('change',function() {
       var foodGroup = $(this).attr("class");

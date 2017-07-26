@@ -84,23 +84,25 @@
 	</section>
 
 	<section id="yourRecipe" class="light">
-		<article class="recipe-list">
-			<div id='recipeList'>
-				<h2 id="smoothieName">Smoothie Recipe</h2>
-				<div id="recipeItems"></div>
+		<article id='recipeList' class="recipe-list">
+			<h2 id="smoothieName">Smoothie Recipe</h2>	
+			<div class="row">
+				<div id="recipeItems" class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1"></div>
+				<div id="smoothiePic" class="img-circle col-md-6 col-sm-6"><p><img src="images/blender-01.png"></p></div>
 			</div>
-			<div id="numberCalories"></div>
-		</article>
-		<article class="blender">
-			<p><img src="images/blender-01.png"></p>
 			<div class="buttons">
-				<a href="recipes.html#recipes"><button class="next">Try A Recipe</button></a>
+				<a href="recipes.html#recipes"><button class="next">Try Another Recipe</button></a>
 				<a href="index.html#make"><button class="next" id="blndAnother">Create Your Own</button></a>
 			</div>
 		</article>
 	</section>
 	
-	<footer></footer>
+	<footer id="resources" class="dark">
+		<article class="resources">
+		<h2>Resources</h2>
+		<p>Have you heard of <a href="#">ANDI?</a></p>
+		</article>
+	</footer>
 
 	<script
 	src="https://code.jquery.com/jquery-3.2.1.min.js"

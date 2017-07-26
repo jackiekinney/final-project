@@ -260,15 +260,30 @@ li {
 	display: block;
 	border: dotted #bbe2aa;
 	padding: 20px;
+	margin: 50px auto;
 }
 
-#recipeList h2 {
+.recipe-list h2 {
 	padding: 10px 0 0 0;
 }
 
 #recipeList h4 {
 	font-size: 1.5em;
 	margin: 20px 0 0 0;
+}
+
+#smoothiePic {
+	background-color: #bbe2aa;
+	height: 300px;
+	width: 300px;
+	margin: 20px 0;
+}
+
+#smoothiePic img {
+	display: block;
+	margin: 0 auto;
+	height: 250px;
+	width: auto;
 }
 
 #resultMessage span {
@@ -505,13 +520,20 @@ Drop down menu styling
 		display: block;
 		margin: 0 auto;
 	}
-/*
-	.nav-container {
+
+	.scrolled {
+  /* PART 1: Write styles here to convert the nav into a sticky nav. */
+		background-color: #f7f7f4;
+		padding: 20px;
 		position: relative;
-		padding: 10px;
 		margin: 0;
-		width: 150px;
+		color: #374056;
+		text-transform: uppercase;
 		box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
-		z-index: 100;
-	}	
+		z-index: 1000;
+	  	position: fixed;
+	  	top: 0;
+	  	transition: all .3s ease-in 2s;
+	  	width: 100%;
+	}
 }
