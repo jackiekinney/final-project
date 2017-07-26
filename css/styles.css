@@ -178,6 +178,7 @@ recipes section styling
 
 .smoothie-profile {
 	margin: 40px 10px 50px;
+	color: white;
 }
 
 a .smoothie-profile {
@@ -187,7 +188,7 @@ a .smoothie-profile {
 
 .smoothie-profile img {
 	margin: 0px auto;
-	height: 100px;
+	height: 150px;
 	width: auto;
 	padding: 25px 10px 0;
 }
@@ -452,6 +453,18 @@ Drop down menu styling
 	margin: 50px 10px;
 }
 
+.next {
+	position: relative;
+	z-index: 100;
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 1.5em;
+	margin: 50px 10px;
+}
 
 .scrolled {
   /* PART 1: Write styles here to convert the nav into a sticky nav. */

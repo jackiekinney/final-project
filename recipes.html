@@ -15,7 +15,7 @@
 	<header>					
 		<div class="brand">
 			<a href="index.html"><div id="logo-img" alt="Logo Image"><img src="images/logo-01.png"></div></a>
-			<a href="index.html" class="visible-sm visible-md visible-lg"><h1>Kalefornia Smoothie</h1></a>
+			<a href="index.html"><h1>Kalefornia Smoothie</h1></a>
 		</div>
 		
 		<nav class="nav-container">
@@ -30,7 +30,6 @@
 	
 	<section id="recipes" class="dark">
 		<h2>Choose A Recipe</h2>
-		<h3>or make your own!</h3>
 		<div class="carousel">
 			<div class="responsive">
 			  <a href="#yourRecipe" class="premade">
@@ -87,14 +86,17 @@
 	<section id="yourRecipe" class="light">
 		<article class="recipe-list">
 			<div id='recipeList'>
-				<h2 id="smoothieName">Your Recipe</h2>
+				<h2 id="smoothieName">Smoothie Recipe</h2>
 				<div id="recipeItems"></div>
 			</div>
 			<div id="numberCalories"></div>
 		</article>
 		<article class="blender">
 			<p><img src="images/blender-01.png"></p>
-			<a href="#blend"><button id="blendBtn">Blend</button></a>
+			<div class="buttons">
+				<a href="recipes.html#recipes"><button class="next">Try A Recipe</button></a>
+				<a href="#make"><button class="next" id="blndAnother">Blend Another</button></a>
+			</div>
 		</article>
 	</section>
 	
