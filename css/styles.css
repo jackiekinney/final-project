@@ -45,6 +45,8 @@ article {
 	margin: 0 auto;
 }
 
+
+
 /* ----------------------------------------
 text treatment / headings
 ---------------------------------------- */
@@ -256,11 +258,16 @@ li {
 	margin: 20px 0;
 }
 
+#yourRecipe {
+	display: block;
+	padding: 20px;
+}
+
 #recipeList {
 	display: block;
 	border: dotted #bbe2aa;
 	padding: 20px;
-	margin: 50px auto;
+	margin: 20px auto;
 }
 
 .recipe-list h2 {
@@ -270,6 +277,10 @@ li {
 #recipeList h4 {
 	font-size: 1.5em;
 	margin: 20px 0 0 0;
+}
+
+#smoothieName {
+	padding: 20px;
 }
 
 #smoothiePic {
@@ -482,7 +493,6 @@ Drop down menu styling
 }
 
 .scrolled {
-  /* PART 1: Write styles here to convert the nav into a sticky nav. */
 	background-color: #f7f7f4;
 	padding: 20px;
 	position: relative;
