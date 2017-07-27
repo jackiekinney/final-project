@@ -41,13 +41,13 @@ $(document).ready(function(){
   toggle between hiding and showing the dropdown content */
 
   $(document).on('click','.dropbtn', function(e) {
-      $('.dropbtn').not(this).next().removeClass('dcshow');
-      $(this).next().toggleClass('dcshow');
+      $('.dropbtn').not(this).next().removeClass('show');
+      $(this).next().toggleClass('show');
       e.stopPropagation();
   });
   $(document).on('click',function(e) {
       if($(e.target).is('.dropdown-content') === false && $(e.target).is('p') === false && $(e.target).is('input') === false && $(e.target).is('p input') === false) {
-      $('.dropdown-content').removeClass('dcshow');
+      $('.dropdown-content').removeClass('show');
       }
   });
 
@@ -322,6 +322,7 @@ $(document).ready(function(){
     }
 });
 
+  // display recipe when smoothie button is clicked (on 'recipes' page)
   $('.premade').on('click', function(event) {
     // event.preventDefault();
     // console.log('premade');
@@ -353,6 +354,7 @@ $(document).ready(function(){
     console.log(img);
     $('#smoothiePic').empty();
     $('#smoothiePic').html(img);
+    $('.action').addClass('show');
   });
 
 

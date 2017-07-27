@@ -21,14 +21,8 @@ a:hover {
 	color: #374056;
 }
 
-ul {
+ul, li {
 	list-style: none;
-}
-
-article {
-	width: 60%;
-	margin: 0 auto;
-	padding: 50px 0;
 }
 
 .dark {
@@ -45,6 +39,32 @@ article {
 	margin: 0 auto;
 }
 
+/* ----------------------------------------
+global styles
+---------------------------------------- */
+
+img {
+	display: block;
+	margin: 0 auto;
+	width: auto;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 1.5em;
+	display: block;
+	margin: 30px auto;
+}
+
+h1, h2, h3 {
+	text-align: center;
+	font-family: 'Pacifico', cursive;
+}
 
 
 /* ----------------------------------------
@@ -61,18 +81,12 @@ h2 {
 	font-size: 1.8em;
 	margin: 0 0 10px;
 	padding: 50px 0 0;
-
 }
 
 h3 {
 	font-size: 1.5em;
 	margin: -5px 0;
 	letter-spacing: 1px;
-}
-
-h1, h2, h3 {
-	text-align: center;
-	font-family: 'Pacifico', cursive;
 }
 
 h4 {
@@ -84,30 +98,48 @@ p {
 	font-size: 1em;
 }
 
+/*---- comparing text styles ---------------------------------------*/
+
+li {
+	padding: 5px 0;
+	margin: 0 10px;
+}
+
+.info h2 {
+	color: #3ba06f;
+	margin: 0 0 30px;
+}
+
+.recipe-list h2 {
+	padding: 10px 0 0 0;
+}
+
+#recipeList h4 {
+	font-size: 1.5em;
+	margin: 20px 0 0 0;
+}
+
+.tips-list h3 {
+	margin: 0 0 20px 0;
+}
+
+.tips-list h4 {
+	color: #3ba06f;
+}
+
+.tips-list ul {
+	display: flex;
+}
 /* ----------------------------------------
 header
  ---------------------------------------- */
 
 header {
 	position: relative;
-	background-color: #bbe2aa;
+	background-color: #bbe2aa; /* light green */
 	margin: 0;
 	text-align: center;
 	padding: 0 0 50px;
-}
-
-#header-nav {
-	padding: 10px;
-}
-
-.navbar-brand h1 {
-	font-size: 2em;
-	margin: 9px 0;
-}
-
-.container-fluid img {
-	width: 80px;
-	height: auto;
 }
 
 .nav-container {
@@ -132,32 +164,23 @@ header {
 	transition: all 300ms ease-out;
 }
 
-.main-nav span {
+.main-nav span { /* 'home' 'recipes' etc... */
 	color: #374056;
 	text-transform: uppercase;
 	transition: all .3s ease-in-out;
 }
 
-.brand {
+.brand { /* logo and header */
 	padding: 50px 0;
 }
 
 #logo-img img {
 	max-width: 200px;
-	height: auto;
-	margin: 0 auto;
 }
 
 /* ----------------------------------------
 recipes section styling
 ---------------------------------------- */
-
-#carouselOne {
-	display: flex;
-	justify-content: space-between;
-	background-color: #3ba06f;
-	color: white;
-}
 
 #make {
 	position: relative;
@@ -189,18 +212,16 @@ a .smoothie-profile {
 }
 
 .smoothie-profile img {
-	margin: 0px auto;
 	height: 150px;
-	width: auto;
 	padding: 25px 10px 0;
 }
 
-#make .slick-prev {
+#make .slick-prev { /* 'make' carousel left arrow */
     left: -25px;
     top: 110px;
 }
 
-#make .slick-next {
+#make .slick-next { /* 'make' carousel right arrow */
     right: -25px;
     top: 110px;
 }
@@ -213,31 +234,9 @@ info section styling
 	color: #374056;
 }
 
-.info h2 {
-	color: #3ba06f;
-	margin: 0 0 30px;
-}
-
-li {
-	padding: 5px 0;
-	margin: 0 10px;
-}
-
 .tips-list {
 	margin: 50px auto 10px;
 	width: 80%;
-}
-
-.tips-list h3 {
-	margin: 0 0 20px 0;
-}
-
-.tips-list h4 {
-	color: #3ba06f;
-}
-
-.tips-list ul {
-	display: flex;
 }
 
 #resources {
@@ -249,11 +248,6 @@ li {
 'Make Your Own' page styling
 ---------------------------------------- */
 
-.blender img {
-	display: block;
-	margin: 0 auto;
-}
-
 #numberCalories {
 	margin: 20px 0;
 }
@@ -263,20 +257,15 @@ li {
 	padding: 20px;
 }
 
-#recipeList {
+
+.recipe-list {
 	display: block;
-	border: dotted #bbe2aa;
 	padding: 20px;
 	margin: 20px auto;
 }
 
-.recipe-list h2 {
-	padding: 10px 0 0 0;
-}
-
-#recipeList h4 {
-	font-size: 1.5em;
-	margin: 20px 0 0 0;
+#recipeList {
+	border: dotted #bbe2aa;
 }
 
 #smoothieName {
@@ -291,10 +280,7 @@ li {
 }
 
 #smoothiePic img {
-	display: block;
-	margin: 0 auto;
 	height: 250px;
-	width: auto;
 }
 
 #resultMessage span {
@@ -340,13 +326,6 @@ Drop down button styling
     cursor: pointer;
     position: relative;
     margin: 0 auto;
-    outline: none;
-}
-
-.dropbtn:active {
-	outline: 0 !important;
-    border: none;
-    box-shadow: none;
 }
 
 .dropbtn span {
@@ -357,16 +336,12 @@ Drop down button styling
 
 .dropbtn img {
 	height: 175px;
-	width: auto;
 	padding: 25px;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
-    outline: 0 !important;
-    border: none;
-    box-shadow: none;
 }
 
 /* -----------------------------------------
@@ -425,14 +400,6 @@ Drop down menu styling
 	z-index: 100;
 }
 
-.dcshow {
-	display: block;
-	position: relative;
-	z-index: 100;
-    outline: 0 !important;
-    border: none;
-    box-shadow: none;
-}
 /* ----------------------------------------
 'Smoothie Result' styling
 ---------------------------------------- */
@@ -467,28 +434,14 @@ Drop down menu styling
 	justify-content: center
 }
 
-.action {
+.action { /* button is hidden until after user clicks 'blend' or choses a smoothie recipes */
 	display: none;
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 10px;
-	font-family: 'Pacifico', cursive;
-	font-size: 1.5em;
 	margin: 50px 10px;
 }
 
-.next {
+.buttons button { /* buttons on 'recipe' page under recipe & image */
 	position: relative;
 	z-index: 100;
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 10px;
-	font-family: 'Pacifico', cursive;
-	font-size: 1.5em;
 	margin: 50px 10px;
 }
 
@@ -507,12 +460,11 @@ Drop down menu styling
   	width: 100%;
 }
 
-
-@media (max-width:768px) {
-}
+/* ----------------------------------------
+Small screen styling
+---------------------------------------- */
 
 @media (max-width: 479px) {
-  /* Header */
 
 	#logo-img img {
 		width: 150px;
@@ -529,21 +481,5 @@ Drop down menu styling
 		height: 30px;
 		display: block;
 		margin: 0 auto;
-	}
-
-	.scrolled {
-  /* PART 1: Write styles here to convert the nav into a sticky nav. */
-		background-color: #f7f7f4;
-		padding: 20px;
-		position: relative;
-		margin: 0;
-		color: #374056;
-		text-transform: uppercase;
-		box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
-		z-index: 1000;
-	  	position: fixed;
-	  	top: 0;
-	  	transition: all .3s ease-in 2s;
-	  	width: 100%;
 	}
 }
